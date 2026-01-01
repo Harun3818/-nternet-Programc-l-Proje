@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hakkımda - Merak Ettikleriniz</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="1.css">
+    <link rel="stylesheet" href="extra.css">
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark sticky-top">
+        <div class="container">
+            <a class="navbar-brand fw-bold" href="1.html">GARA</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item"><a class="nav-link" href="1.html#home">Anasayfa</a></li>
+                    <li class="nav-item"><a class="nav-link" href="1.html#about">Hakkımda</a></li>
+                    <li class="nav-item"><a class="nav-link active" href="hakkimda.html">Merak Ettikleriniz</a></li>
+                    <li class="nav-item"><a class="nav-link" href="1.html#contact">İletişim</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <section class="py-5">
+        <div class="container">
+
+            <div class="text-center mb-3">
+                <div class="icon-frame d-inline-flex gap-3 align-items-center">
+                    <a id="github-icon" class="social-icon flame" href="https://github.com/Harun3818" target="_blank" rel="noopener" aria-label="GitHub">
+                        <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" fill="currentColor" aria-hidden="true">
+                            <path d="M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.387.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61-.546-1.387-1.333-1.757-1.333-1.757-1.09-.744.083-.729.083-.729 1.205.085 1.84 1.236 1.84 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.418-1.305.762-1.605-2.665-.3-5.466-1.335-5.466-5.93 0-1.31.467-2.381 1.236-3.221-.124-.303-.536-1.523.117-3.176 0 0 1.008-.322 3.3 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.29-1.552 3.296-1.23 3.296-1.23.655 1.653.243 2.873.12 3.176.77.84 1.235 1.911 1.235 3.221 0 4.61-2.803 5.625-5.475 5.921.43.37.823 1.102.823 2.222 0 1.606-.015 2.898-.015 3.293 0 .322.216.694.825.576C20.565 22.092 24 17.593 24 12.297c0-6.627-5.373-12-12-12"/>
+                        </svg>
+                    </a>
+
+                    <a id="instagram-icon" class="social-icon instagram-icon flame" href="https://www.instagram.com/harunkara669/" target="_blank" rel="noopener" aria-label="Instagram">
+                        <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                            <path fill="currentColor" d="M7 2C4.243 2 2 4.243 2 7v10c0 2.757 2.243 5 5 5h10c2.757 0 5-2.243 5-5V7c0-2.757-2.243-5-5-5H7zm0 2h10c1.654 0 3 1.346 3 3v10c0 1.654-1.346 3-3 3H7c-1.654 0-3-1.346-3-3V7c0-1.654 1.346-3 3-3zm5 3.5A4.5 4.5 0 1 0 16.5 12 4.505 4.505 0 0 0 12 7.5zm0 2A2.5 2.5 0 1 1 9.5 12 2.503 2.503 0 0 1 12 9.5zM18.5 6a.9.9 0 1 1-.9-.9.9.9 0 0 1 .9.9z" />
+                        </svg>
+                    </a>
+                </div>
+            </div>
+
+            <h2 class="text-center mb-4 fw-bold">Hakkımda — Merak Ettikleriniz</h2>
+            <p class="text-center text-muted mb-4">Buraya hakkınızda merak edilen soruları sorabilirsiniz. Tamamlandığında işaretle ve gerektiğinde sil.</p>
+
+            <div class="row justify-content-center">
+                <div class="col-md-8">
+                    <div class="card shadow-sm">
+                        <div class="card-body">
+                            <div id="todo-app">
+                                <form id="todo-form" class="d-flex gap-2 mb-3" onsubmit="return false;">
+                                    <input id="todo-input" class="form-control" placeholder="Merak ettiğiniz soru veya maddeyi yazın...">
+                                    <button id="add-btn" type="button" class="btn btn-primary">Ekle</button>
+                                    <button id="send-btn" type="button" class="btn btn-success">Gönder</button>
+                                </form>
+                                <div id="send-alert" class="mt-2"></div>
+                                <ul id="todo-list" class="list-group">
+                                
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    <p class="mt-3 text-muted small"></p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="todo.js"></script>
+</body>
+</html>

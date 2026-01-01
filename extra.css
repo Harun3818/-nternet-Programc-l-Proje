@@ -1,0 +1,156 @@
+/* Extra styles: fiery highlights and GitHub link styles */
+
+/* New item highlight - intensified */
+.new-item {
+  background: linear-gradient(90deg, #ff8a00 0%, #ff3b00 50%, #ff0000 100%);
+  color: #fff;
+  transition: transform 0.2s ease, box-shadow 0.2s ease, opacity 0.3s ease;
+  border: 0;
+  border-radius: 8px;
+  padding-left: 0.75rem;
+  padding-right: 0.75rem;
+}
+
+.new-item .form-check-input {
+  filter: brightness(0.9);
+}
+
+/* More intense fiery hover */
+.new-item:hover {
+  transform: translateY(-6px) scale(1.02);
+  box-shadow: 0 20px 80px rgba(255, 90, 0, 0.7), 0 0 100px rgba(255, 140, 0, 0.45);
+  z-index: 2;
+  animation: flickerMore 1s infinite;
+}
+
+@keyframes flickerMore {
+  0% { box-shadow: 0 12px 40px rgba(255,90,0,0.6); }
+  30% { box-shadow: 0 22px 90px rgba(255,140,0,0.9); }
+  60% { box-shadow: 0 18px 70px rgba(255,110,0,0.8); }
+  100% { box-shadow: 0 12px 40px rgba(255,90,0,0.6); }
+}
+
+/* Social icon frame (watery) */
+.icon-frame {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.6rem;
+  padding: 0.35rem;
+  border-radius: 14px;
+  background: linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.02));
+  border: 1px solid rgba(0,150,255,0.18);
+  box-shadow: 0 10px 40px rgba(0,150,255,0.14), inset 0 1px 0 rgba(255,255,255,0.03);
+  backdrop-filter: blur(6px);
+  margin-top: -28px; /* bring the frame closer to the header */
+  position: relative;
+  z-index: 3;
+}
+
+@media (max-width: 576px) {
+  .icon-frame {
+    margin-top: -14px;
+    transform: scale(0.98);
+  }
+}
+
+.social-icon {
+  width: 64px;
+  height: 64px;
+  display: inline-block;
+  color: #ff8a00;
+  transition: transform 0.25s ease, filter 0.2s ease;
+}
+.social-icon svg { width:100%; height:100%; display:block; }
+
+.social-icon.flame { filter: drop-shadow(0 8px 30px rgba(255,120,0,0.65)); }
+.social-icon.flame:hover {
+  transform: translateY(-14px) scale(1.18);
+  filter: drop-shadow(0 26px 120px rgba(255,180,0,0.95)) drop-shadow(0 0 120px rgba(255,140,0,0.6));
+  animation: flameHigh 0.9s infinite;
+}
+
+#github-icon { color: #ff8a00; }
+.instagram-icon {
+  width: 64px;
+  height: 64px;
+  display: inline-block;
+  border-radius: 14px;
+  padding: 8px;
+  background: linear-gradient(45deg,#feda75 0%,#fa7e1e 25%,#d62976 50%,#962fbf 75%,#4f5bd5 100%);
+  color: #fff;
+  box-shadow: 0 12px 60px rgba(80,30,150,0.28), inset 0 1px 0 rgba(255,255,255,0.06);
+  transition: transform 0.25s ease, filter 0.2s ease, box-shadow 0.2s ease;
+}
+.instagram-icon svg { width:100%; height:100%; display:block; color: #fff; }
+.instagram-icon:hover {
+  transform: translateY(-18px) scale(1.22);
+  box-shadow: 0 40px 160px rgba(255,100,180,0.95), 0 12px 50px rgba(80,30,150,0.75);
+  animation: flameHigh 0.9s infinite;
+}
+
+@keyframes flameHigh {
+  0% { filter: drop-shadow(0 8px 25px rgba(255,100,0,0.8)); transform: translateY(-6px) scale(1.08); }
+  40% { filter: drop-shadow(0 30px 120px rgba(255,140,0,1)); transform: translateY(-18px) scale(1.22); }
+  70% { filter: drop-shadow(0 20px 80px rgba(255,160,0,0.95)); transform: translateY(-12px) scale(1.14); }
+  100% { filter: drop-shadow(0 8px 25px rgba(255,100,0,0.8)); transform: translateY(-6px) scale(1.08); }
+}
+
+/* Image zoom overlay (centered, 65% of viewport) */
+img.zoomable { cursor: zoom-in; }
+#img-overlay{ position:fixed; inset:0; display:none; align-items:center; justify-content:center; background:rgba(0,0,0,0.75); z-index:1300; }
+#img-overlay.open{ display:flex; }
+#img-overlay .img-overlay-content{ position:relative; max-width:65vw; max-height:65vh; display:flex; align-items:center; justify-content:center; }
+#img-overlay .img-overlay-content img{ max-width:65vw; max-height:65vh; width:auto; height:auto; border-radius:12px; box-shadow:0 30px 120px rgba(0,0,0,0.8); transform:scale(0.95); transition:transform 240ms ease, opacity 240ms ease; opacity:0; }
+#img-overlay.open .img-overlay-content img{ transform:scale(1); opacity:1; }
+#img-overlay.open.circular .img-overlay-content{ width:65vmin; height:65vmin; max-width:none; max-height:none; }
+#img-overlay.open.circular .img-overlay-content img{ width:100%; height:100%; object-fit:cover; border-radius:50%; }
+#img-overlay #img-overlay-close{ position:absolute; top:-8px; right:-8px; border-radius:50%; padding:0.35rem; }
+#img-overlay.open.circular #img-overlay-close{ top:8px; right:8px; }
+#img-overlay .img-overlay-content img:focus{ outline:2px solid rgba(255,255,255,0.2); }
+
+/* Profile photo removed — styles commented out to allow easy restore if needed */
+/* .profile-full styles removed per user request */
+
+
+/* Small tweak: make send badge more visible */
+.badge.bg-success {
+  background: linear-gradient(90deg, #4caf50, #2e7d32);
+  color: #fff;
+}
+
+/* Instagram-style circular profile */
+.profile-circle {
+  width: 260px;
+  max-width: 60%;
+  aspect-ratio: 1/1;
+  border-radius: 50%;
+  overflow: hidden;
+  position: relative;
+  margin-left: auto;
+  margin-right: auto;
+  box-shadow: 0 18px 60px rgba(0,0,0,0.12);
+}
+.profile-circle::before {
+  content: "";
+  position: absolute;
+  inset: -6px;
+  border-radius: 50%;
+  background: linear-gradient(45deg,#feda75 0%,#fa7e1e 25%,#d62976 50%,#962fbf 75%,#4f5bd5 100%);
+  z-index: -1;
+  filter: blur(8px);
+  opacity: 0.95;
+}
+.profile-circle img {
+  width:100%;
+  height:100%;
+  object-fit: cover;
+  display:block;
+}
+
+/* Responsive tweaks */
+@media (max-width: 992px) {
+  .profile-circle { width: 220px; }
+}
+@media (max-width: 576px) {
+  .profile-circle { width: 160px; }
+} 
